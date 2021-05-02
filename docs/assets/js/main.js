@@ -7,6 +7,6 @@ var getData = async(fn,data) => {
         body: JSON.stringify({"query":data})
     };
 
-    let json = await (await fetch("./../../api.json",param)).json();
+    let json = await (await fetch("/../../api.json",param)).json();
     fn(json);
 }
