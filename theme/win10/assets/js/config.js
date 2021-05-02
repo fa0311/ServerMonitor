@@ -3,48 +3,53 @@
 function config_chart(title) {
     return {
         type: 'line',
+        tension:0,
         data: {
-            labels: [],
+            labels: [...Array(60)],
             datasets: [
                 {
                     label: title,
-                    data: [],
-                    borderColor: "#0000ff",
-                    backgroundColor: "rgba(0,0,0,0)"
+                    data: [...Array(60)],
+                    borderColor: "#00a2ff",
+                    backgroundColor: "#00a2ff22",
+                    borderWidth: 1
                 }
             ],
         },
         options: {
             responsive: true,
+            animation:false,
+            showTooltips: false,
             title: {
                 display: false,
                 text: "ServerStatus"
             },
-            tooltips: {
-                mode: 'index',
-                intersect: false,
-            },
             hover: {
-                mode: 'nearest',
+                mode: false,
                 intersect: true
             },
             scales: {
               yAxes: [
                   {
                       ticks: {
-                          callback: function(value, index, values) {
-                              return "";
-                            },
-                        　maxTicksLimit:11,
-                          beginAtZero: true,
+                          display:false,
                           min: 0,
                           max: 100,
                           autoSkip: false,
-                          maxRotation: 90,
-                          minRotation: 90
+                          stepSize: 10,
                         }
                     }
-                ]
+                ],
+                xAxes: [
+                    {
+                        ticks: {
+                            callback: function(value, index, values) {
+                                return "";
+                            },
+                            maxTicksLimit:6,
+                          }
+                      }
+                  ]
             },
             legend: {
                display: false
