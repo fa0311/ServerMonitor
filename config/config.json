@@ -1,0 +1,10 @@
+{
+    "theme": "normal",
+    "session": {
+        "time": 60
+    },
+    "html": {
+        "title": "ServerMonitor",
+        "description": "ServerMonitor"
+    }
+}
