@@ -3,7 +3,7 @@ var charts = {};
 
 function config_load(){
     let ctx = document.getElementById("cpu_all");
-    configs["cpu_all"] = config_all_chart("ALLCPU");
+    configs["cpu_all"] = config_cpu_chart("ALLCPU");
     charts["cpu_all"] = new Chart(ctx, configs["cpu_all"]);
 
     ctx = document.getElementById("mem");
@@ -26,7 +26,7 @@ function config_load(){
             canvas.setAttribute('id', "cpu_"+cpu[1]);
             box.appendChild(canvas);
             let ctx = document.getElementById("cpu_"+cpu[1]);
-            configs["cpu_"+cpu[1]] = config_chart("CPU"+cpu[1]);
+            configs["cpu_"+cpu[1]] = config_cpu_chart("CPU"+cpu[1]);
             charts["cpu_"+cpu[1]] = new Chart(ctx, configs["cpu_"+cpu[1]]);
         });
         document.getElementById('Modelname').textContent = response.lscpu[13][1];
