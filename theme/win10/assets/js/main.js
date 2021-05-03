@@ -30,6 +30,7 @@ function config_load(){
             charts["cpu_"+cpu[1]] = new Chart(ctx, configs["cpu_"+cpu[1]]);
         });
         document.getElementById('Modelname').textContent = response.lscpu[13][1];
+
         setTimeout(loop(), 1000);
     },["mpstat","lscpu"]);
 
@@ -68,6 +69,12 @@ function loop() {
             adddata("cpu_"+cpu[i][1],cpu[i][2]);
         });
         adddata("mem",Math.round(response.free[1][2] / response.free[1][1] * 100));
+        document.getElementById('apu_all').textContent = Math.round(response.mpstat[5][2]);
+        document.getElementById('CPUMHz').textContent = (Math.round(response.lscpu[16][1] / 10) / 100).toFixed(2);
+        document.getElementById('mem_total').textContent = (Math.round(response.free[1][1] / 104857.6) / 10).toFixed(1);
+        document.getElementById('mem_used').textContent = (Math.round(response.free[1][2] / 104857.6) / 10).toFixed(1);
+        document.getElementById('mem_per').textContent = Math.round(response.free[1][2] / response.free[1][1] * 100);
+
     },["free","mpstat"]);
 }
 if(config_no_load === true){
