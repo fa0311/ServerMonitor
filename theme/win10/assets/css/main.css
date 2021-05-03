@@ -1,45 +1,77 @@
+/*index*/
 p{
     margin: 0px;
+    font-size: 16px;
 }
+/*全体*/
 #performance {
     display: flex;
     flex-direction: row;
 }
-.charts > *{
-    width:20vw;
-}
-
-.charts1{
+/*左サイド共通*/
+.left{
     display: flex;
     flex-direction: column;
-    width:20vw;
+    width:300px;
 }
-#cpuview {
+
+.left .select{
+    display: flex;
+}
+
+.left .select .chart{
+    width:100px;
+    margin: 0px 5px;
+}
+
+.left .select .details .main{
+    font-size: 18px;
+}
+
+.left .select .details .sub{
+    font-size: 14px;
+}
+
+/*右サイド共通*/
+
+.right {
     margin: 0px 20px;
 }
 
-#cpuview .title{
+.right .title{
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin: 0px 40px 0px 40px;
+    margin: 0px 10px 0px 10px;
 }
-#cpuview .title .main{
+
+.right .title .main{
     font-size: 30px;
 }
-#cpuview .title .sub{
-    font-size: 20px;
+.right .title .sub{
+    font-size: 18px;
 }
-#cpuview .subtitle{
+
+
+.right .subtitle{
     display: flex;
     justify-content: space-between;
-    margin: 0px 40px 0px 40px;
+    margin: 0px 10px 0px 10px;
     font-size: 12px;
     color: #888888;
 }
-.charts2{
+
+.right .chart{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    width:80vw;
+    width: -webkit-calc(100vw - 320px);
+    width: -moz-calc(100vw - 320px);
+    width: calc(100vw - 320px);  
+}
+/*CPU表示*/
+#cpuview .chart > *{
+    width: -webkit-calc((100vw - 320px) / 4);
+    width: -moz-calc((100vw - 320px) / 4);
+    width: calc((100vw - 320px) / 4);  
 }

@@ -1,22 +1,36 @@
 <div id="performance">
-    <div class="charts1">
-        <div>
-            <canvas id="cpu_all"></canvas>
+    <div class="left">
+        <div class="select">
+            <div class="chart">
+                <canvas width="100" height="80" id="cpu_all"></canvas>
+            </div>
+            <div class="details">
+                <p class="main">CPU</p>
+                <p class="sub">00% 0.00GHz</p>
+            </div>
         </div>
-        <div>
-            <canvas id="mem"></canvas>
+        <div class="select">
+            <div class="chart">
+                <canvas width="100" height="80" id="mem"></canvas>
+            </div>
+            <div class="details">
+                <p class="main">メモリ</p>
+                <p class="sub">00.0 / 00.0 GB (00%)</p>
+            </div>
         </div>
     </div>
-    <div id="cpuview">
+    <div class="right" id="cpuview">
         <div class="title">
             <p class="main">CPU</p>
             <p class="sub" id="Modelname"></p>
         </div>
         <div class="subtitle">
-            <p>60秒間の平均使用率 (%) </p>
+            <p>60秒間の使用率 (%) </p>
             <p>100%</p>
         </div>
-        <div class="charts2" id="charts">
+        <div class="chart" id="charts">
+        </div>
+        <div class="details">
         </div>
     </div>
 </div>
