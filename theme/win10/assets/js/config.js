@@ -89,8 +89,8 @@ function config_mem_chart(title) {
                 {
                     label: title,
                     data: [...Array(60)],
-                    borderColor: "#ff0000",
-                    backgroundColor: "#ff000022",
+                    borderColor: "#b01fff",
+                    backgroundColor: "#b01fff22",
                     borderWidth: 1
                 }
             ],
