@@ -1,68 +1,79 @@
 /*index*/
+@font-face {
+    font-family: 'MEIRYO';
+    src: url('./theme/win10/assets/fonts/MEIRYO.TTC') format('truetype');
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'MEIRYO';
+    src: url('./theme/win10/assets/fonts/MEIRYOB.TTC') format('truetype');
+    font-weight: bold;
+}
 p{
     margin: 0px;
     font-size: 16px;
+    font-family:'MEIRYO','メイリオ', 'Meiryo', sans-serif;
 }
+
 /*全体*/
 #performance {
     display: flex;
     flex-direction: row;
 }
+
 /*左サイド共通*/
-.left{
+#performance > .left{
     display: flex;
     flex-direction: column;
     width:300px;
-    margin-top: 10px;
 }
 
-.left .select{
+#performance >.left .select{
     display: flex;
 }
 
-.left .select .chart{
+#performance > .left .select .chart{
     width:100px;
     margin: 0px 5px;
 }
 
-.left .select .details .main{
+#performance > .left .select .details .main{
     font-size: 18px;
 }
 
-.left .select .details .sub{
+#performance > .left .select .details .sub{
     font-size: 14px;
 }
 
 /*右サイド共通*/
 
-.right {
+#performance > .right {
     margin: 0px 20px;
 }
+#performance > .right .top{
+    margin: 0px 10px 0px 10px;
+}
 
-.right .title{
+#performance > .right .top .title{
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin: 0px 10px 0px 10px;
 }
 
-.right .title .main{
-    font-size: 30px;
+#performance > .right .top .title .main{
+    font-size: 32px;
 }
-.right .title .sub{
-    font-size: 18px;
+#performance > .right .top .title .sub{
+    font-size: 20px;
 }
 
-
-.right .subtitle{
+#performance > .right .top .subtitle{
     display: flex;
     justify-content: space-between;
-    margin: 0px 10px 0px 10px;
-    font-size: 12px;
     color: #888888;
 }
 
-.right .chart{
+#performance > .right .chart{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -70,8 +81,49 @@ p{
     width: -moz-calc(100vw - 320px);
     width: calc(100vw - 320px);  
 }
+
+#performance > .right .details{
+    display: flex;
+    flex-direction: row;
+}
+
+#performance > .right .details .left{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 10px 0px 0px;
+}
+
+#performance > .right .details .left .column{
+    display: flex;
+    margin: 5px 0px;
+}
+
+#performance > .right .details .left .column > div {
+    margin: 0px 10px;
+}
+
+#performance > .right .details .left .column .main{
+    font-size: 25px;
+}
+
+#performance > .right .details .right{
+    display: flex;
+    flex-direction: row;
+}
+
+#performance > .right .details .right .column{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 20px 0px 0px;
+    font-size: 14px;
+}
+
+#performance > .right .details .column .title{
+    color: #888888;
+}
+
 /*CPU表示*/
-#cpuview .chart > *{
+#performance #cpuview .chart > *{
     width: -webkit-calc((100vw - 320px) / 4);
     width: -moz-calc((100vw - 320px) / 4);
     width: calc((100vw - 320px) / 4);  
