@@ -32,7 +32,8 @@ p{
 #performance > .left{
     display: flex;
     flex-direction: column;
-    width:300px;
+    width:275px;
+    min-width: 275px;
 }
 
 #performance >.left .select{
@@ -89,6 +90,20 @@ p{
     width: calc(100vw - 320px);  
 }
 
+#performance > .right{
+    min-width: calc(100vw - 320px);
+}
+
+@media screen and (max-width:1030px) { 
+    #performance > .right{
+        overflow-x: scroll;
+    }
+}
+
+#performance > .right > *{
+    min-width: 700px;
+}
+
 #performance > .right .details{
     display: flex;
     flex-direction: row;
@@ -134,4 +149,7 @@ p{
     width: -webkit-calc((100vw - 320px) / 4);
     width: -moz-calc((100vw - 320px) / 4);
     width: calc((100vw - 320px) / 4);  
+    min-width: -webkit-calc(700px / 4);
+    min-width: -moz-calc(700px / 4);
+    min-width: calc(700px / 4);  
 }
