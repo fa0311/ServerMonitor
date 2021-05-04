@@ -1,18 +1,18 @@
 /*index*/
 @font-face {
     font-family: 'MEIRYO';
-    src: url('./theme/win10/assets/fonts/MEIRYO.TTC') format('truetype');
+    src: url('./../fonts/MEIRYO.TTC') format('truetype');
     font-weight: normal;
 }
 @font-face {
     font-family: 'MEIRYO';
-    src: url('./theme/win10/assets/fonts/MEIRYOB.TTC') format('truetype');
+    src: url('./../fonts/MEIRYOB.TTC') format('truetype');
     font-weight: bold;
 }
 p{
     margin: 0px;
     font-size: 16px;
-    font-family:'MEIRYO','メイリオ', 'Meiryo', sans-serif;
+    font-family:'MEIRYO' ,'メイリオ', 'Meiryo', sans-serif;
 }
 
 /*全体*/
