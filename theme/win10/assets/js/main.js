@@ -1,6 +1,8 @@
 var configs = {};
 var charts = {};
-
+window.onload = function(){
+    config_load();
+}
 function config_load(){
     let ctx = document.getElementById("cpu_all");
     configs["cpu_all"] = config_cpu_chart("ALLCPU");
@@ -60,9 +62,10 @@ function config_load(){
             main.appendChild(main_child);
             right.appendChild(main);
         }
-        setTimeout(loop(), 1000);
+        setInterval(function(){
+            loop()
+        }, 1000);
     },["mpstat","lscpu"]);
-
 }
 
 function SIprefix_to_byte(text){
@@ -123,9 +126,6 @@ function adddata(key,push,max=60){
 }
 
 function loop() {
-    setTimeout(function () {
-        loop();
-    }, 1000);
     getData(function(response){
         cpu = response.mpstat.slice(5);
         Object.keys(cpu).forEach(function(i){
@@ -147,10 +147,5 @@ function loop() {
         document.getElementById('details_CPUMHz').textContent = (Math.round(response.lscpu.CPUMHz[0] / 10) / 100).toFixed(2);
         document.getElementById('details_process').textContent = response.ps.process;
         document.getElementById('details_thread').textContent = response.ps.thread;
-
-
-    },["free","mpstat","lscpu","ps","uptime"]);
-}
-if(config_no_load === true){
-    config_load();
+    },["free","mpstat","lscpu","ps","uptime","iostat"]);
 }

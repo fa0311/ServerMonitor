@@ -158,10 +158,3 @@ function config_mem_chart(title) {
         }
     }
 }
-
-
-if (typeof config_load === 'function') {
-    config_load();
-}else{
-    var config_no_load = true;
-}
