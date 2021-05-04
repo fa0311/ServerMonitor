@@ -21,9 +21,6 @@ $output = [];
 $json = file_get_contents("php://input");
 $query = json_decode($json, true)["query"];
 
-#debug
-$query = ["free","mpstat","lscpu","ps","uptime"];
-
 if(in_array("free",$query)){
     $output["free"] = shell_exec_array("free"," ",true);
 }

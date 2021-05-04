@@ -149,7 +149,7 @@ function loop() {
         document.getElementById('details_thread').textContent = response.ps.thread;
 
 
-    },["free","mpstat"]);
+    },["free","mpstat","lscpu","ps","uptime"]);
 }
 if(config_no_load === true){
     config_load();
