@@ -9,7 +9,7 @@ function config_cpu_chart(title) {
             datasets: [
                 {
                     label: title,
-                    data: [...Array(60)],
+                    data: [...Array(60)].fill(0),
                     borderColor: "#00a2ff",
                     backgroundColor: "#00a2ff22",
                     borderWidth: 1
@@ -88,7 +88,7 @@ function config_mem_chart(title) {
             datasets: [
                 {
                     label: title,
-                    data: [...Array(60)],
+                    data: [...Array(60)].fill(0),
                     borderColor: "#b01fff",
                     backgroundColor: "#b01fff22",
                     borderWidth: 1
