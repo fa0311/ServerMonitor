@@ -35,9 +35,10 @@ if(in_array("lscpu",$query)){
     $output["lscpu"] = shell_exec_array("lscpu",":",true);
 }
 if(in_array("ps",$query)){
-    $output["ps"] = [];
-    $output["ps"][] = shell_exec_string("ps aux | wc -l");
-    $output["ps"][] = shell_exec_string("ps aux -L | wc -l");
+    $output["ps"] = [
+        "process" => shell_exec_string("ps aux | wc -l"),
+        "thread" => shell_exec_string("ps aux -L | wc -l")
+    ];
 }
 if(in_array("uptime",$query)){
     $output["uptime"] = shell_exec_array("uptime","[ :]",false);
