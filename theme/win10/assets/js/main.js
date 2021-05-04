@@ -35,7 +35,9 @@ function config_load(){
         document.getElementById('details_Sockets').textContent = response.lscpu["Socket(s)"][0];
         document.getElementById('details_Corespersocket').textContent = response.lscpu["Core(s)persocket"][0];
         document.getElementById('details_CPUs').textContent = response.lscpu["CPU(s)"][0];
-        if(response.lscpu["Frequencyboost"][0] === "enabled")
+        if(response.lscpu["Frequencyboost"] === undefined){
+            document.getElementById('details_Frequencyboost').textContent = "取得できません";
+        }else if(response.lscpu["Frequencyboost"][0] === "enabled")
             document.getElementById('details_Frequencyboost').textContent = "有効";
         else
             document.getElementById('details_Frequencyboost').textContent = "無効";
