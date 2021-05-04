@@ -64,7 +64,7 @@ function loop() {
         Object.keys(cpu).forEach(function(i){
             adddata("cpu_"+cpu[i][1],cpu[i][2]);
         });
-        adddata("mem",Math.round(response.free[1][2] / response.free[1][1] * 100));
+        adddata("mem",Math.round(response.free.Mem[1] / response.free.Mem[0] * 100));
     },["free","mpstat"]);
 }
 if(config_no_load === true){

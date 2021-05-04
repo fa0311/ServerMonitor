@@ -19,7 +19,6 @@ function config_load(){
             div.setAttribute('class', "cpu_"+cpu[1]);
             div.setAttribute('id', "id_cpu_"+cpu[1]);
             chart.appendChild(div);
-    
             let box = document.getElementById("id_cpu_"+cpu[1]);
     
             let canvas = document.createElement('canvas');
@@ -29,7 +28,7 @@ function config_load(){
             configs["cpu_"+cpu[1]] = config_cpu_chart("CPU"+cpu[1]);
             charts["cpu_"+cpu[1]] = new Chart(ctx, configs["cpu_"+cpu[1]]);
         });
-        document.getElementById('Modelname').textContent = response.lscpu[13][1];
+        document.getElementById('Modelname').textContent = response.lscpu["Modelname"][0];
 
         setTimeout(loop(), 1000);
     },["mpstat","lscpu"]);
@@ -58,7 +57,6 @@ function adddata(key,push,max=60){
     charts[key].update();
 }
 
-
 function loop() {
     setTimeout(function () {
         loop();
@@ -68,12 +66,12 @@ function loop() {
         Object.keys(cpu).forEach(function(i){
             adddata("cpu_"+cpu[i][1],cpu[i][2]);
         });
-        adddata("mem",Math.round(response.free[1][2] / response.free[1][1] * 100));
+        adddata("mem",Math.round(response.free.Mem[1] / response.free.Mem[0] * 100));
         document.getElementById('apu_all').textContent = Math.round(response.mpstat[5][2]);
-        document.getElementById('CPUMHz').textContent = (Math.round(response.lscpu[16][1] / 10) / 100).toFixed(2);
-        document.getElementById('mem_total').textContent = (Math.round(response.free[1][1] / 104857.6) / 10).toFixed(1);
-        document.getElementById('mem_used').textContent = (Math.round(response.free[1][2] / 104857.6) / 10).toFixed(1);
-        document.getElementById('mem_per').textContent = Math.round(response.free[1][2] / response.free[1][1] * 100);
+        document.getElementById('CPUMHz').textContent = (Math.round(response.lscpu.CPUMHz[0] / 10) / 100).toFixed(2);
+        document.getElementById('mem_total').textContent = (Math.round(response.free.Mem[0] / 104857.6) / 10).toFixed(1);
+        document.getElementById('mem_used').textContent = (Math.round(response.free.Mem[1] / 104857.6) / 10).toFixed(1);
+        document.getElementById('mem_per').textContent = Math.round(response.free.Mem[1] / response.free.Mem[0] * 100);
 
     },["free","mpstat"]);
 }

@@ -20,14 +20,18 @@ $output = [];
 
 $json = file_get_contents("php://input");
 $query = json_decode($json, true)["query"];
+
+#debug
+$query = ["free","mpstat","lscpu"];
+
 if(in_array("free",$query)){
-    $output["free"] = shell_exec_array("free"," ");
+    $output["free"] = shell_exec_array("free"," ",true);
 }
 if(in_array("mpstat",$query)){
-$mpstat = shell_exec_array("mpstat 1 1 -P ALL"," ");
+$mpstat = shell_exec_array("mpstat 1 1 -P ALL"," ",false);
 $output["mpstat"] = array_slice($mpstat,0,ceil(count($mpstat) / 2) + 2);
 }
 if(in_array("lscpu",$query)){
-    $output["lscpu"] = shell_exec_array("lscpu",":");
+    $output["lscpu"] = shell_exec_array("lscpu",":",true);
 }
 echo json_encode($output);
