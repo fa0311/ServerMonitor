@@ -25,7 +25,7 @@ function loop() {
     }, 1000);
     getData(function(response){
         config.data.labels.push(getTime());
-        config.data.datasets[0].data.push(Math.round(response.free[1][2] / response.free[1][1] * 100));
+        config.data.datasets[0].data.push(Math.round(response.free.Mem[1] / response.free.Mem[0] * 100));
         config.data.datasets[1].data.push(response.mpstat[5][2]);
         if(config.data.labels.length > 60){
             config.data.datasets[0].data.shift();

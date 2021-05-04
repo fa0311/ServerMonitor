@@ -1,0 +1,11 @@
+
+.charts > *{
+    width:25vw;
+}
+
+.charts{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width:100vw;
+}

@@ -1,22 +1,117 @@
 <div id="performance">
-    <div class="charts1">
-        <div>
-            <canvas id="cpu_all"></canvas>
+    <div class="left">
+        <div class="select">
+            <div class="chart">
+                <canvas width="100" height="80" id="cpu_all"></canvas>
+            </div>
+            <div class="details">
+                <p class="main">CPU</p>
+                <p class="sub">
+                    </spanGHz>
+                    <span id="apu_all">00</span><span>% </span>
+                    <span id="CPUMHz">00</span><span>GHz</span>
+                </p>
+            </div>
         </div>
-        <div>
-            <canvas id="mem"></canvas>
+        <div class="select">
+            <div class="chart">
+                <canvas width="100" height="80" id="mem"></canvas>
+            </div>
+            <div class="details">
+                <p class="main">メモリ</p>
+                <p class="sub">
+                    <span id="mem_used">00.0</span><span>/</span><span id="mem_total">00.0</span><span>GB</span>
+                    <span>(</span><span id="mem_per">00</span><span>%)</span>
+                </p>
+            </div>
         </div>
     </div>
-    <div id="cpuview">
-        <div class="title">
-            <p class="main">CPU</p>
-            <p class="sub" id="Modelname"></p>
+    <div class="bar"></div>
+    <div class="right" id="cpuview">
+        <div class="top">
+            <div class="title">
+                <p class="main">CPU</p>
+                <p class="sub" id="Modelname"></p>
+            </div>
+            <div class="subtitle">
+                <p>60秒間の使用率 (%) </p>
+                <p>100%</p>
+            </div>
         </div>
-        <div class="subtitle">
-            <p>60秒間の平均使用率 (%) </p>
-            <p>100%</p>
+        <div class="charts" id="charts">
         </div>
-        <div class="charts2" id="charts">
+        <div class="details">
+            <div class="left">
+                <div class="column">
+                    <div class="box">
+                        <p class="title">使用率</p>
+                        <p class="main">
+                            <span id="details_apu_all">00</span><span>%</span>
+                        </p>
+                    </div>
+                    <div class="box">
+                        <p class="title">速度</p>
+                        <p class="main">
+                            <span id="details_CPUMHz">000</span><span>GHz</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box">
+                        <p class="title">プロセス数</p>
+                        <p class="main">
+                            <span id="details_process">000</span>
+                        </p>
+                    </div>
+                    <div class="box">
+                        <p class="title">スレッド数</p>
+                        <p class="main">
+                            <span id="details_thread">0000</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box">
+                        <p class="title">稼働時間</p>
+                        <p class="main">
+                            <span id="details_time_days">0</span><span>:</span><span
+                                id="details_time_hrs">00</span><span>:</span><span
+                                id="details_time_mins">00</span><span>:</span><span id="details_time_secs">00</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="column" id="details_right_left">
+                    <p class="title">基本速度:</p>
+                    <p class="title">ソケット</p>
+                    <p class="title">コア:</p>
+                    <p class="title">論理プロセッサ数:</p>
+                    <p class="title">仮想化:</p>
+                    <p class="title">L1 キャッシュ:</p>
+                </div>
+                <div class="column" id="details_right_right">
+                    <p class="main">
+                        <span id="details_CPUmaxMHz">0</span>
+                        <span>GHz</span>
+                    </p>
+                    <p class="main">
+                        <span id="details_Sockets">0</span>
+                    </p>
+                    <p class="main">
+                        <span id="details_Corespersocket">0</span>
+                    </p>
+                    <p class="main">
+                        <span id="details_CPUs">0</span>
+                    </p>
+                    <p class="main">
+                        <span id="details_Frequencyboost">有効</span>
+                    </p>
+                    <p class="main">
+                        <span id="details_L1cache">0</span>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
