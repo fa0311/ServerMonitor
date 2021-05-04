@@ -41,7 +41,7 @@ if(in_array("ps",$query)){
     ];
 }
 if(in_array("uptime",$query)){
-    $output["uptime"] = shell_exec_array("uptime","[ :]",false);
+    $output["uptime"] = shell_exec_array("uptime","[ :]",false)[0];
 }
 
 
