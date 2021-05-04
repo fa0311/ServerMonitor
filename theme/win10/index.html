@@ -26,6 +26,7 @@
             </div>
         </div>
     </div>
+    <div class="bar"></div>
     <div class="right" id="cpuview">
         <div class="top">
             <div class="title">
@@ -37,92 +38,77 @@
                 <p>100%</p>
             </div>
         </div>
-        <div class="chart" id="charts">
+        <div class="charts" id="charts">
         </div>
         <div class="details">
             <div class="left">
                 <div class="column">
-                    <div>
+                    <div class="box">
                         <p class="title">使用率</p>
                         <p class="main">
-                            <span id="">00</span><span>%</span>
+                            <span id="details_apu_all">00</span><span>%</span>
                         </p>
                     </div>
-                    <div>
+                    <div class="box">
                         <p class="title">速度</p>
                         <p class="main">
-                            <span id="">000</span><span>GHz</span>
+                            <span id="details_CPUMHz">000</span><span>GHz</span>
                         </p>
                     </div>
                 </div>
                 <div class="column">
-                    <div>
+                    <div class="box">
                         <p class="title">プロセス数</p>
                         <p class="main">
-                            <span id="">000</span>
+                            <span id="details_process">000</span>
                         </p>
                     </div>
-                    <div>
+                    <div class="box">
                         <p class="title">スレッド数</p>
                         <p class="main">
-                            <span id="">0000</span>
-                        </p>
-                    </div>
-                    <div>
-                        <p class="title">ハンドル数</p>
-                        <p class="main">
-                            <span id="">000000</span>
+                            <span id="details_thread">0000</span>
                         </p>
                     </div>
                 </div>
                 <div class="column">
-                    <div>
+                    <div class="box">
                         <p class="title">稼働時間</p>
                         <p class="main">
-                            <span id="">0:00:00:00</span>
+                            <span id="details_time_days">0</span><span>:</span><span
+                                id="details_time_hrs">00</span><span>:</span><span
+                                id="details_time_mins">00</span><span>:</span><span id="details_time_secs">00</span>
                         </p>
                     </div>
                 </div>
             </div>
             <div class="right">
-                <div class="column">
+                <div class="column" id="details_right_left">
                     <p class="title">基本速度:</p>
                     <p class="title">ソケット</p>
                     <p class="title">コア:</p>
                     <p class="title">論理プロセッサ数:</p>
                     <p class="title">仮想化:</p>
                     <p class="title">L1 キャッシュ:</p>
-                    <p class="title">L2 キャッシュ:</p>
-                    <p class="title">L3 キャッシュ:</p>
                 </div>
-                <div class="column">
+                <div class="column" id="details_right_right">
                     <p class="main">
-                        <span id="">0</span>
-                        <span>Ghz</span>
+                        <span id="details_CPUmaxMHz">0</span>
+                        <span>GHz</span>
                     </p>
                     <p class="main">
-                        <span id="">0</span>
+                        <span id="details_Sockets">0</span>
                     </p>
                     <p class="main">
-                        <span id="">0</span>
+                        <span id="details_Corespersocket">0</span>
                     </p>
                     <p class="main">
-                        <span id="">0</span>
+                        <span id="details_CPUs">0</span>
                     </p>
                     <p class="main">
-                        <span id="">有効</span>
+                        <span id="details_Frequencyboost">有効</span>
                     </p>
                     <p class="main">
-                        <span id="">000</span>
-                        <span>0KB</span>
-                    </p>
-                    <p class="main">
-                        <span id="">00.0</span>
-                        <span>0KB</span>
-                    </p>
-                    <p class="main">
-                        <span id="">00.0</span>
-                        <span>KB</span>
+                        <span id="details_L1cache">0</span>
                     </p>
                 </div>
             </div>
