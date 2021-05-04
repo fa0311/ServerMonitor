@@ -85,13 +85,13 @@ p{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    width: -webkit-calc(100vw - 320px);
-    width: -moz-calc(100vw - 320px);
-    width: calc(100vw - 320px);  
+    width: -webkit-calc(100vw - 321px);
+    width: -moz-calc(100vw - 321px);
+    width: calc(100vw - 321px);  
 }
 
 #performance > .right{
-    min-width: calc(100vw - 320px);
+    min-width: calc(100vw - 349px);
 }
 
 @media screen and (max-width:1030px) { 
@@ -146,9 +146,9 @@ p{
 
 /*CPU表示*/
 #performance #cpuview .charts .chart{
-    width: -webkit-calc((100vw - 320px) / 4);
-    width: -moz-calc((100vw - 320px) / 4);
-    width: calc((100vw - 320px) / 4);  
+    width: -webkit-calc((100vw - 349px) / 4);
+    width: -moz-calc((100vw - 349px) / 4);
+    width: calc((100vw - 349px) / 4);  
     min-width: -webkit-calc(700px / 4);
     min-width: -moz-calc(700px / 4);
     min-width: calc(700px / 4);  
